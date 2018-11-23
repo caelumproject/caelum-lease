@@ -21,6 +21,8 @@ contract CaelumLease {
     }
 
     address public agreedToken = 0xf658B83456748EB784CB98F8F0786e1dAf8431B0;
+    uint public agreedTimeframe = agreedTimeDays * 1 days;
+    uint agreedTimeDays = 0;
 
     address public _leaser;
     address public _lender;
@@ -44,6 +46,8 @@ contract CaelumLease {
         // REMOVE BEFORE LIVE!!! TESTING ONLY
         _lender = msg.sender;
         _leaser = msg.sender;
+
+        //agreedTimeDays = _days;
     }
 
     // The lender calls this to approve the contract to become a masternode
