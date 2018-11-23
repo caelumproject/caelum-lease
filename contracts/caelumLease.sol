@@ -75,6 +75,7 @@ contract CaelumLease {
 
     // Call this as last. The contract will self destruct and send all funds to the leaser
     function releaseFundsToLeaser ()  internal {
+        if(!CaelumInterface(agreedToken).transfer(_leaser, 0)) revert();
         selfdestruct(_leaser);
     }
 
